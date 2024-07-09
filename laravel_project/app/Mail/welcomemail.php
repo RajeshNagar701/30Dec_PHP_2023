@@ -18,9 +18,9 @@ class welcomemail extends Mailable
      *
      * @return void
      */
-    public function __construct($maildata)
+    public function __construct($data)
     {
-        $this->$maildata=$maildata;
+        $this->$data=$data;
     }
 
     /**
@@ -45,8 +45,8 @@ class welcomemail extends Mailable
         return new Content(
             view: 'website.mail_template',
             with:[
-                'name'=>$this->maildata['name'],
-                'email'=>$this->maildata['email'],
+                'name'=>$this->data['name'],
+                'email'=>$this->data['email'],
             ]
         );
     }

@@ -129,8 +129,8 @@ class CustomerController extends Controller
         $data->cid=$request->cid;
         $data->save();
 
-        $maildata=array("email"=>$email,"name"=>$name);
-        Mail::to($email)->send(new welcomemail($maildata));
+        $data=array("email"=>$email,"name"=>$name);
+        Mail::to($email)->send(new welcomemail($data));
 
         Alert::success('Congrats', 'You\'ve Successfully Registered');
         return redirect('/signup');
