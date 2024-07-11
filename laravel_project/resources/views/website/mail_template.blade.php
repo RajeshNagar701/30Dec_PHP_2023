@@ -9,7 +9,8 @@
     
     <h1>Hi welcome to our companies </h1>
     <h1>Hi .... {{$name}}</h1>
-    <h1>Your user Name is : {{$email}}</h1>
+    <h1>Your user User name is : {{$email}}</h1>
+    <h1>Your user Password is : {{$password}}</h1>
 
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Mail;
+namespace {{ namespace }};
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class welcomemail extends Mailable
+class {{ class }} extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -18,9 +18,9 @@ class welcomemail extends Mailable
      *
      * @return void
      */
-    public function __construct($data)
+    public function __construct()
     {
-        $this->data=$data;
+        //
     }
 
     /**
@@ -31,7 +31,7 @@ class welcomemail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Welcomemail',
+            subject: '{{ subject }}',
         );
     }
 
@@ -43,12 +43,7 @@ class welcomemail extends Mailable
     public function content()
     {
         return new Content(
-            view: 'website.mail_template',
-            with:[
-                'name'=>$this->data['name'],
-                'email'=>$this->data['email'],
-                'password'=>$this->data['password'],
-            ]
+            markdown: '{{ view }}',
         );
     }
 

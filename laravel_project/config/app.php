@@ -97,6 +97,10 @@ return [
 
     'fallback_locale' => 'en',
 
+    'available_locales' => [
+        'English' => 'en',
+        'Hindi' => 'hi',
+        ],
     /*
     |--------------------------------------------------------------------------
     | Faker Locale

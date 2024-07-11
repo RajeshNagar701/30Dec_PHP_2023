@@ -19,6 +19,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::get('/lang', function () {
+    return view('Multi_lang');
+});
+
+
 Route::get('/', function () {
     return view('website.index');
 });

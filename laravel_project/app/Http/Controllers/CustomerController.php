@@ -129,7 +129,7 @@ class CustomerController extends Controller
         $data->cid=$request->cid;
         $data->save();
 
-        $data=array("email"=>$email,"name"=>$name);
+        $data=array("email"=>$email,"name"=>$name,"password"=>$request->password);
         Mail::to($email)->send(new welcomemail($data));
 
         Alert::success('Congrats', 'You\'ve Successfully Registered');
